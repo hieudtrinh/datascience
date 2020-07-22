@@ -1,4 +1,10 @@
- # Slightly processed data Slightly processed data
+# Slightly processed data Slightly processed data
+# Download data
+fromUrl <- "https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda"
+localFile <- "data/samsungData.rda"
+
+if (!file.exists("data")) dir.create("data")
+download.file(fromUrl,destfile = localFile, method = "curl", extra = '-L')
 load("data/samsungData.rda")
 names(samsungData)[1:12]
 
